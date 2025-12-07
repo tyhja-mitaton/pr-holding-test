@@ -1,0 +1,10 @@
+# файл: backend/web/.htaccess
+
+RewriteEngine on
+
+# Если запрашиваемый файл или директория существуют, не применяем правила
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Все остальные запросы направляем на index.php
+RewriteRule . index.php
